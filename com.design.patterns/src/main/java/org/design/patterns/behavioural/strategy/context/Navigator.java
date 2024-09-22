@@ -1,14 +1,14 @@
 package org.design.patterns.behavioural.strategy.context;
 
-import org.design.patterns.behavioural.strategy.strategies.Strategy;
+import org.design.patterns.behavioural.strategy.strategies.IStrategy;
 
-public class Navigator {
-    Strategy strategy;
-    public void setStrategy(Strategy strategy){
-        this.strategy = strategy;
+public class Navigator implements INavigator {
+    IStrategy iStrategy;
+    public void setStrategy(IStrategy IStrategy){
+        this.iStrategy = IStrategy;
     }
 
     public void executeStrategy(){
-        strategy.buildRoute();
+        iStrategy.buildRoute();
     }
 }

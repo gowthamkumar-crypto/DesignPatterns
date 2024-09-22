@@ -1,21 +1,21 @@
 package org.design.patterns.behavioural.strategy;
 
+import org.design.patterns.behavioural.strategy.context.INavigator;
 import org.design.patterns.behavioural.strategy.context.Navigator;
-import org.design.patterns.behavioural.strategy.strategies.impl.BusStrategy;
-import org.design.patterns.behavioural.strategy.strategies.impl.FamousPlacesStrategy;
-import org.design.patterns.behavioural.strategy.strategies.impl.WalkStrategy;
+import org.design.patterns.behavioural.strategy.strategies.impl.BusIStrategy;
+import org.design.patterns.behavioural.strategy.strategies.impl.FamousPlacesIStrategy;
+import org.design.patterns.behavioural.strategy.strategies.impl.WalkIStrategy;
 
 public class ClientExecuter {
     public static void main(String[] args){
-        Navigator n = new Navigator();
-
-        n.setStrategy(new BusStrategy());
+        INavigator n = new Navigator();
+        n.setStrategy(new BusIStrategy());
         n.executeStrategy();
 
-        n.setStrategy(new WalkStrategy());
+        n.setStrategy(new WalkIStrategy());
         n.executeStrategy();
 
-        n.setStrategy(new FamousPlacesStrategy());
+        n.setStrategy(new FamousPlacesIStrategy());
         n.executeStrategy();
     }
 }

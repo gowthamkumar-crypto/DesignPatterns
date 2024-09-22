@@ -1,5 +1,5 @@
 package org.design.patterns.behavioural.strategy.strategies;
 
-public interface Strategy {
+public interface IStrategy {
     void buildRoute();
 }
